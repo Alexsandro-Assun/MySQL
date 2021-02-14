@@ -1,0 +1,27 @@
+CREATE DATABASE db_rh;
+
+CREATE TABLE tb_funcionarios(
+	id bigint (5) auto_increment,
+	nome varchar(20),
+	cargo varchar(20),
+    turno varchar(5),
+    salario decimal( 8,2),
+	primary key (id)
+);
+
+insert into tb_funcionarios (nome, cargo, turno, salario )
+VALUES ("Alex", "Desenvolvedor", "Manhã", 6000);
+
+insert into tb_funcionarios (nome, cargo, turno, salario )
+VALUES ("Sandro", "Gerente", "Tarde", 8000);		
+		
+insert into tb_funcionarios (nome, cargo, turno, salario )
+VALUES ("Alexandre", "Faxineiro", "Manhã", 1950);
+
+insert into tb_funcionarios (nome, cargo, turno, salario )
+VALUES ("Luana", "Desenvolvedora", "Noite", 6000);
+
+insert into tb_funcionarios (nome, cargo, turno, salario )
+VALUES ("Lusinete", "Supervisora", "Noite", 7300);
+
+select * from tb_funcionarios where salario > 2000;
