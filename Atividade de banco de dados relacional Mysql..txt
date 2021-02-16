@@ -1,0 +1,34 @@
+CREATE DATABASE db_generation_game_online;
+
+USE db_generation_game_online;
+
+CREATE TABLE classe(
+id_classe int not null auto_increment unique,
+nomeClasse  varchar(45)not null,
+habilidade varchar(45)not null,
+statusBonus varchar(45)not null,
+primary key(id_classe)
+);
+
+CREATE TABLE personagem(
+	id_personagem INT NOT NULL AUTO_INCREMENT UNIQUE ,
+    primary key(id_personagem),
+    fk_id_classe int,
+    foreign key(fk_id_classe) references classe (id_classe),
+	nomePersonagem varchar(45)not null,
+    nivel int(2)not null,
+    vida int not null,
+	ataque int not null,
+	defesa int not null
+);
+
+INSERT INTO db_generation_game_online.classe(nomeClasse,habilidade,statusBonus)
+VALUES
+(1,"Assassino", "Furtividade", "Dano Crítico"),
+(2,"Mago", "Magia elemental", "Mana extra"),
+(3,"Atirador","Tiros Multiplos", "Velocidade de ataque"),
+(4,"Suporte", "Cura em área", "Regeneração de mana adicional");
+
+INSERT INTO db_generation_game_online.personagem
+
+select * from db_generation_game_online.personagem
